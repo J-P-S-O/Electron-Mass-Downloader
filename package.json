@@ -1,0 +1,19 @@
+{
+  "name": "electronapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.5"
+  },
+  "dependencies": {
+    "open": "^7.3.0",
+    "request": "^2.88.2"
+  }
+}
