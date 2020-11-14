@@ -9,6 +9,12 @@
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
 </head>
 <script src = "download.js"></script>
+<script> 
+let lnamee = 0
+window.onload = function(){
+    lnamee = document.getElementById("lname")
+    lnamee.width = remote.getCurrentWindow().getBounds().width
+} </script>
 
 <body>
     <h1>Olá Mundo!</h1>
@@ -16,9 +22,8 @@
     Chrome <script>document.write(process.versions.chrome)</script>,
     e Electron <script>document.write(process.versions.electron)</script>.
 	<p></p>
-<input type="text" id="lname" name="lname" label = "Type a full url">
-<button onclick = "mydown()">Download! </button>
-    
-    
+<input type="text" id="lname" name="lname" label = "Type a full url" class = "input-box">
+
+<button onclick = "mydown(lnamee.value)">Download! </button>    
 </body>
 </html>

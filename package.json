@@ -12,6 +12,11 @@
   "devDependencies": {
     "electron": "^10.1.5"
   },
+  "bin": "main.js",
+  "pkg": {
+    "assets": [ "node_modules/**/*"],
+    "targets": [ "node10-win-x64", "node10-win-x86" ]
+  },
   "dependencies": {
     "open": "^7.3.0",
     "request": "^2.88.2"

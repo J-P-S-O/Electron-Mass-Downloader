@@ -1,10 +1,11 @@
-const { ipcRenderer } = require('electron');
-let mydown = function(){
-urll = document.getElementById("lname")
+const { ipcRenderer, remote } = require('electron');
+
+let mydown = function(url){
+
 
             // Some data that will be sent to the main process
             let Data = {
-                url: urll.value
+                url: url
                 
             };
 

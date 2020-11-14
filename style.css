@@ -7,3 +7,6 @@ h1{
 	font-family:'Courier New', Courier, monospace;
 	font-size: 30px;
 }
+.inputbox{
+    width: 90px;
+}
