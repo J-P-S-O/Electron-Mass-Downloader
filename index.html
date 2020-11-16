@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = "any">
 <head>
 <link rel="stylesheet" href="style.css">
 <style>
@@ -13,7 +13,7 @@
 let lnamee = 0
 window.onload = function(){
     lnamee = document.getElementById("lname")
-    lnamee.width = remote.getCurrentWindow().getBounds().width
+   
 } </script>
 
 <body>
@@ -22,7 +22,7 @@ window.onload = function(){
     Chrome <script>document.write(process.versions.chrome)</script>,
     e Electron <script>document.write(process.versions.electron)</script>.
 	<p></p>
-<input type="text" id="lname" name="lname" label = "Type a full url" class = "input-box">
+<input onchange = "mydown(lnamee.value)" type="text" id="lname" name="lname" label = "Type a full url" class = "input-box">
 
 <button onclick = "mydown(lnamee.value)">Download! </button>    
 </body>

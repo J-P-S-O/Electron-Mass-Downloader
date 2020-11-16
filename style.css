@@ -7,6 +7,10 @@ h1{
 	font-family:'Courier New', Courier, monospace;
 	font-size: 30px;
 }
-.inputbox{
-    width: 90px;
+.input-box{
+	position: absolute;
+	width: 90%;
+	bottom: 10px;
+	resize: vertical
+	
 }

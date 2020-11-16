@@ -4,6 +4,7 @@ let mydown = function(url){
 
 
             // Some data that will be sent to the main process
+            url = url.split(",")
             let Data = {
                 url: url
                 
