@@ -1,3 +1,4 @@
+/* MAIN.JS*/
 const { dialog,ipcMain,app, BrowserWindow, Notification } = require('electron')
 const fs = require('fs')
 const request = require('request')
