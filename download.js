@@ -9,6 +9,17 @@ function download(url) {
     sendReq.on('response', (response) => {
       url = decodeURI(url)
       dest = `C:\\Users\\${process.env.USERNAME}\\Downloads\\`+url.replaceAll("/","-").replaceAll(":","")+"."+response.headers['content-type'].slice(response.headers['content-type'].lastIndexOf("/")+1,response.headers['content-type'].lastIndexOf(";"))
+      if (path.existsSync(dest)) { 
+        let overw = window.confirm("Path exists, would you like to overwrite the file?")
+        if (overw){
+
+        }else{
+          let dots = dest.split(".")
+          let ext = dots[(dots.length)-1]
+          dest = dest.replaceAll("."+ext)
+          //code here
+        }
+      }
     const file = fs.createWriteStream(dest);
         sendReq.pipe(file);
  file.on('finish', () => {
@@ -32,7 +43,7 @@ file.on('error', (err) => {
 
 }
 let mydown = function(url){
-
+  lnamee.value = ""
 
             // Some data that will be sent to the main process
             url = url.split(",")
