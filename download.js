@@ -7,21 +7,18 @@ function download(url) {
     
     const sendReq = request.get(url);
     sendReq.on('response', (response) => {
+      url = decodeURI(url)
       dest = `C:\\Users\\${process.env.USERNAME}\\Downloads\\`+url.replaceAll("/","-").replaceAll(":","")+"."+response.headers['content-type'].slice(response.headers['content-type'].lastIndexOf("/")+1,response.headers['content-type'].lastIndexOf(";"))
     const file = fs.createWriteStream(dest);
         sendReq.pipe(file);
  file.on('finish', () => {
 file.close()
-const notification = {
-    title: 'Finished',
-    body: `Downloaded ${dest}`
-  }
-myNotification = new Notification(notification)
+myNotification = new Notification(`Downloaded ${dest}`)
 myNotification.onclick = () => {
   console.log('Notificação clicada')
   open(dest)
 }
-myNotification.show()
+
 file.on('error', (err) => { 
 	throw new Error(err.message)
     });
