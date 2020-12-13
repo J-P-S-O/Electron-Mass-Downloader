@@ -15,12 +15,12 @@ function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: "logo.png",
+    
     webPreferences: {
       nodeIntegration: true
     }
   })
-win.maximize()
+
   win.loadFile('index.html')
   
 }
