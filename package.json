@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^10.2.0"
+    "electron": "^11.1.0"
   },
   "bin": {
     "Electron-Mass-Downloader": "main.js"
