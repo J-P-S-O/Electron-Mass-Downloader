@@ -5,7 +5,5 @@ To install:
 ```batchfile
 git clone https://github.com/J-P-S-O/Electron-Mass-Downloader
 cd electron-mass-downloader
-npm i
-npm install electron --save-dev
-npm start
+npm i && npm install electron --save-dev && npm start
 ```
