@@ -5,7 +5,8 @@ const open = require('open');
 let lnamee = 0
 window.onload = function(){
     lnamee = document.getElementById("lname")
-    lnamee.onchange = mydown(lnamee.value)  
+    
+console.log("included renderer")
 }
 function download(url) {
     console.log(url)
@@ -47,9 +48,8 @@ let mydown = function(url){
             // Some data that will be sent to the main process
             url = url.split(",")
             for (i in url){
-if (url[i] != ""){
 download(url[i])
-}
+
 }
 
            
