@@ -10,12 +10,8 @@ console.log("included renderer")
 }
 function download(url) {
     console.log(url)
- try{   
+  
     const sendReq = request.get(url);
-}catch(e){
-console.log(e)
-return 1
-}
     sendReq.on('response', (response) => {
       url = decodeURI(url)
       dest = `C:\\Users\\${process.env.USERNAME}\\Downloads\\`+url.replaceAll("/","-").replaceAll(":","")+"."+response.headers['content-type'].slice(response.headers['content-type'].lastIndexOf("/")+1,response.headers['content-type'].lastIndexOf(";"))
