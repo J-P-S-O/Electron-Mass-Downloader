@@ -83,7 +83,7 @@ let mime =
 }
 function getMime(header){
 		
-		
+		return "sorry, not available"
 }
 window.onload = function(){
     lnamee = document.getElementById("lname")
