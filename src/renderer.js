@@ -2,6 +2,9 @@ const fs = require('fs')
 const request = require('request')
 const path = require('path');
 const open = require('open');
+let electron = require('electron')
+let remote = electron.remote
+
 let lnamee = 0
 let mime =
 {
@@ -75,11 +78,11 @@ let mime =
   xml: 'application/xml',
   xul: 'application/vnd.mozilla.xul+xml',
   zip: 'application/zip',
-  3gp: 'video/3gpp',
-  3gp_DOES_NOT_CONTAIN_VIDEO: 'audio/3gpp',
-  3gp2: 'video/3gpp2',
-  3gp2_DOES_NOT_CONTAIN_VIDEO: 'audio/3gpp2',
-  7z: 'application/x-7z-compressed'
+  '3gp': 'video/3gpp',
+  '3gp_DOES_NOT_CONTAIN_VIDEO': 'audio/3gpp',
+  '3gp2': 'video/3gpp2',
+  '3gp2_DOES_NOT_CONTAIN_VIDEO': 'audio/3gpp2',
+  '7z': 'application/x-7z-compressed'
 }
 function getMime(header){
 		
@@ -101,10 +104,15 @@ function download(url) {
 	
 	console.log(name)
 	let hs= response.headers["content-type"]
-	hs = hs.split["/"]
+	hs = hs.split("/")
 	hs = hs[hs.length-1]
+
+
 	let ext = name.split(".")[name.split(".").length-1] || hs || "unknown"
-	 dest = `C:\\Users\\${process.env.USERNAME}\\Downloads\\`+name+"."+ext
+	 dest = dialog.showSaveDialogSync(mainWindow, {
+    title: 'Save file',
+    defaultPath: `C:\\Users\\${process.env.USERNAME}\\Downloads\\`+name+"."+ext
+  });
       
     	const file = fs.createWriteStream(dest);
         sendReq.pipe(file);
