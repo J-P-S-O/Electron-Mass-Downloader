@@ -4,11 +4,12 @@ const request = require('request')
 const path = require('path');
 const open = require('open');
 let httpdown = require('src/http.js')
-ipcMain.on("download",function(arg){
+ipcMain.on('download',function(arg){
 	httpdown.download(arg.url)
 }
+
 function createWindow () {
-  const win = new BrowserWindow({
+    const win = new BrowserWindow({
     width: 800,
     height: 600,
 
@@ -18,7 +19,6 @@ function createWindow () {
   })
   win.loadFile('ui/index.html')
 }
-
 app.whenReady().then(createWindow)
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

@@ -1,5 +1,5 @@
 
-function exports.download(url:string ) {
+exports.download = function(url ) {
     console.log(url)
 
     const sendReq = request.get(url);
@@ -8,7 +8,7 @@ function exports.download(url:string ) {
 	let name:string[] | string  = url.split("/")
 	name = name[name.length-1]
 	console.log(name)
-	let hs:string | string[]= response.headers["content-type"]
+	let hs= response.headers["content-type"]
 	hs = hs.split("/")
 	hs = hs[hs.length-1]
 
