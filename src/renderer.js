@@ -2,7 +2,7 @@ const fs = require('fs')
 const request = require('request')
 const path = require('path');
 const open = require('open');
-let {ipcMain} = require('electron')
+let {ipcRenderer} = require('electron')
 let lnamee = 0
 window.onload = function(){
     lnamee = document.getElementById("lname")
@@ -13,7 +13,8 @@ let mydown = function(url){
             // Some data that will be sent to the main process
             url = url.split(",")
             for (i in url){
-//send ipc
+		//send ipc
+		ipcRenderer.send("download", {url: i })
 
 }
 
