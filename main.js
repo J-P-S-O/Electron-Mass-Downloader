@@ -3,23 +3,25 @@ const fs = require('fs')
 const request = require('request')
 const path = require('path');
 const open = require('open');
+let mainWindow = null;
 let httpdown = require('./src/http.js')
-ipcMain.on('download',function(event, arg){
-	httpdown.download(arg)
-})
 
 function createWindow () {
-    const win = new BrowserWindow({
+    mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
 
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+			contextIsolation: false
     }
   })
-  win.loadFile('ui/index.html')
+  mainWindow.loadFile('ui/index.html')
 }
 app.whenReady().then(createWindow)
+ipcMain.on('download',function(event, arg){
+	httpdown.download(arg)
+})
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()

@@ -76,8 +76,9 @@ exports.core = {
   '7z': 'application/x-7z-compressed'
 }
 exports.getExtension = function(hint){
+  
   for (let ext in exports.core) {
-    if (core[ext] == hint ){
+    if (exports.core[ext] == hint ){
       console.log(ext)
       return ext
     }
