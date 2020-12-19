@@ -14,7 +14,8 @@ let mydown = function(url){
             url = url.split(",")
             for (i in url){
 		//send ipc
-		ipcRenderer.send("download", {url: i })
+    console.log(i)
+		ipcRenderer.send("download", url[i] )
 
 }
 

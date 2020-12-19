@@ -3,10 +3,10 @@ const fs = require('fs')
 const request = require('request')
 const path = require('path');
 const open = require('open');
-let httpdown = require('src/http.js')
-ipcMain.on('download',function(arg){
-	httpdown.download(arg.url)
-}
+let httpdown = require('./src/http.js')
+ipcMain.on('download',function(event, arg){
+	httpdown.download(arg)
+})
 
 function createWindow () {
     const win = new BrowserWindow({
