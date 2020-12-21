@@ -78,8 +78,10 @@ exports.core = {
 exports.getExtension = function(hint){
   for (ext in exports.core) {
     console.log(ext)
+    console.log(exports.core[ext])
     if (exports.core[ext] == hint ){
       console.log(ext)
+
       return ext
     }
     return "octet-stream"
