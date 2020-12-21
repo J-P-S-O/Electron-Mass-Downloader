@@ -5,6 +5,7 @@ exports.download = function(url) {
     let {dialog, BrowserWindow } = require("electron")
     let mime = require("./mime.js")
     const sendReq = request.get(url);
+    let fs = require("fs")
     sendReq.on('response', (response) => {
       url = decodeURI(url)
       url = url
