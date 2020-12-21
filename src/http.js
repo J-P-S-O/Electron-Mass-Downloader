@@ -2,7 +2,7 @@
 exports.download = function(url) {
     console.log(url)
     let request = require("request")
-    let {dialog } = require("electron")
+    let {dialog, BrowserWindow } = require("electron")
     let mime = require("./mime.js")
     const sendReq = request.get(url);
     sendReq.on('response', (response) => {
@@ -11,11 +11,11 @@ exports.download = function(url) {
 	name = name[name.length-1]
 	console.log(name)
 	let hs= response.headers["content-type"]
-
+console.log(hs)
 
 let ext = mime.getExtension(hs)
 
-	 dest = dialog.showSaveDialogSync(mainWindow, {
+	 dest = dialog.showSaveDialogSync(BrowserWindow.getAllWindows()[0], {
     title: 'Save file',
     defaultPath: `C:\\Users\\${process.env.USERNAME}\\Downloads\\`+name+"."+ext
   });
