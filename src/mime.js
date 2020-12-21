@@ -76,14 +76,12 @@ exports.core = {
   '7z': 'application/x-7z-compressed'
 }
 exports.getExtension = function(hint){
-  for (ext in exports.core) {
-    console.log(ext)
-    console.log(exports.core[ext])
-    if (exports.core[ext] == hint ){
-      console.log(ext)
-
-      return ext
+  for (i in exports.core){
+    console.log(i)
+    console.log(exports.core[i])
+    if (exports.core[i] == hint ){
+      return i
     }
-    return "octet-stream"
-}
+    return "Octet-stream"
+  }
 }
