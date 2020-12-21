@@ -81,8 +81,9 @@ exports.getExtension = function(hint){
     console.log(i)
     console.log(exports.core[i])
     if (exports.core[i] == hint ){
-      idea = i 
+      idea = i
     }
-    return idea
+
   }
+  return idea
 }
