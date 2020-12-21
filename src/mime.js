@@ -77,6 +77,7 @@ exports.core = {
 }
 exports.getExtension = function(hint){
   let idea = "octet-stream"
+  hint = hint.split(";")[0]
   console.log(hint)
   for (i in exports.core){
     console.log(i)
