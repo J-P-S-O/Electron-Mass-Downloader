@@ -2,7 +2,7 @@
 exports.download = function(url) {
     console.log(url)
     let request = require("request")
-    let {dialog, BrowserWindow } = require("electron")
+    let {dialog, BrowserWindow, Notification } = require("electron")
     let mime = require("./mime.js")
     const sendReq = request.get(url);
     let fs = require("fs")
