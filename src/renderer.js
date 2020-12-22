@@ -7,7 +7,11 @@ let lnamee = 0
 window.onload = function(){
     lnamee = document.getElementById("lname")
      lnamee.placeholder="Url here!"
-     lnamee.onchange="mydown(lnamee.value)"
+     lnamee.onkeypress = function(keycode){
+       if (keycode == 13){
+         mydown(lnamee.value)
+       }
+     }
 console.log("included renderer")
 }
 let mydown = function(url){
