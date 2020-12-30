@@ -5,13 +5,9 @@ const open = require('open');
 let {ipcRenderer} = require('electron')
 let lnamee = 0
 window.onload = function(){
-    lnamee = document.getElementById("lname")
+    lnamee = document.querySelector("input")
      lnamee.placeholder="Url here!"
-     lnamee.onkeypress = function(keycode){
-       if (keycode == 13){
-         mydown(lnamee.value)
-       }
-     }
+     lnamee.onchange = mydown(lnamee.value)
 console.log("included renderer")
 }
 let mydown = function(url){
