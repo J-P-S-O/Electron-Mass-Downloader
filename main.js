@@ -1,26 +1,26 @@
-const { dialog,ipcMain,app, BrowserWindow, Notification } = require('electron')
+const { dialog, ipcMain, app, BrowserWindow, Notification } = require('electron')
 const fs = require('fs')
 const request = require('request')
-const path = require('path');
-const open = require('open');
-let mainWindow = null;
-let httpdown = require('./src/http.js')
+const path = require('path')
+const open = require('open')
+let mainWindow = null
+const httpdown = require('./src/http.js')
 
 function createWindow () {
-    mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
 
     webPreferences: {
       nodeIntegration: true,
-			contextIsolation: false
+      contextIsolation: false
     }
   })
   mainWindow.loadFile('ui/index.html')
 }
 app.whenReady().then(createWindow)
-ipcMain.on('download',function(event, arg){
-	httpdown.download(arg)
+ipcMain.on('download', function (event, arg) {
+  httpdown.download(arg)
 })
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

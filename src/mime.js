@@ -75,18 +75,17 @@ exports.core = {
   '3gp2_DOES_NOT_CONTAIN_VIDEO': 'audio/3gpp2',
   '7z': 'application/x-7z-compressed'
 }
-exports.getExtension = function(hint){
-  let idea = "octet-stream"
-  hint = hint.split(";")[0]
+exports.getExtension = function (hint) {
+  let idea = 'octet-stream'
+  hint = hint.split(';')[0]
   console.log(hint)
-  for (i in exports.core){
+  for (i in exports.core) {
     console.log(i)
     console.log(exports.core[i])
     console.log(hint)
-    if (exports.core[i] == hint ){
+    if (exports.core[i] == hint) {
       idea = i
     }
-
   }
   return idea
 }
