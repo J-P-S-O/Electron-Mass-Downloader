@@ -8,7 +8,7 @@ exports.download = function (url) {
   const fs = require('fs')
   sendReq.on('response', (response) => {
     url = decodeURI(url)
-    url = url
+    
     let name = url.split('/')
     name = name[name.length - 1]
     console.log(name)
