@@ -7,6 +7,3 @@
 ![image](https://api.travis-ci.com/J-P-S-O/Electron-Mass-Downloader.svg?branch=main)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJ-P-S-O%2FElectron-Mass-Downloader.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FJ-P-S-O%2FElectron-Mass-Downloader?ref=badge_shield)
 
-
-## License
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FJ-P-S-O%2FElectron-Mass-Downloader.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FJ-P-S-O%2FElectron-Mass-Downloader?ref=badge_large)
