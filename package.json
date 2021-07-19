@@ -14,7 +14,7 @@
   "license": "ISC",
   "devDependencies": {
     "electron": "^11.3.0",
-    "electron-packager": "^15.2.0"
+    "electron-packager": "^15.3.0"
   },
   "bin": {
     "Electron-Mass-Downloader": "main.js"
